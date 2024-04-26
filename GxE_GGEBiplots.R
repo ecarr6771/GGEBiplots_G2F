@@ -15,10 +15,10 @@ library(GGEBiplots) # for making the biplots
   # set of environmental covariates
   # list of desired genotypes to filter by
 getwd()
-setwd("/Users/eleanor/Documents/Spring2024/Frontiers/Module_2_G2F")
+setwd("/Users/eleanor/Documents/Spring2024/Frontiers/Module_2_G2F/data/")
 
 # read in files
-phenos <- read.csv("PHENO_original.csv") # phenotype file
+phenos <- read.csv("PHENO.csv") # phenotype file
 e_cov <- read.csv("ECOV.csv") # environmental covariates file
 checks <- read.csv("checks.csv") # list of the checks
 
@@ -235,7 +235,7 @@ sw_all <- sw_all %>%
   mutate(year_loc = factor(year_loc, levels = unique(year_loc)))
 
 plot <- ggplot(sw_all, aes(x = year_loc, y = mean, fill = Discriminibility.Group)) +
-  geom_bar(stat = "identity", position = position_dodge(), color = "black") +
+  geom_bar(stat = "identity", position = position_dodge()) +
   geom_errorbar(aes(ymin = mean - sd, ymax = mean + sd), width = 0.2, position = position_dodge(0.9)) +
   #scale_fill_manual(values = c("High" = "red", "Low" = "blue")) +
   labs(x = "Year Location", y = "Mean Soil Water Covariate Value", fill = "Discriminability Group") +
@@ -243,7 +243,7 @@ plot <- ggplot(sw_all, aes(x = year_loc, y = mean, fill = Discriminibility.Group
   theme_minimal() +
   theme(
     axis.text.x = element_text(size = 6, angle = 90, hjust = 1),  # Rotate and shrink x-axis labels
-    axis.text.y = element_text(size = rel(.5))  # Set y-axis text to two-thirds the default size
+    axis.text.y = element_text(size = rel(.5)),  # Set y-axis text to two-thirds the default size
   )
 
 # Print the plot
