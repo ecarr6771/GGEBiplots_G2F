@@ -11,3 +11,6 @@ The goal of this project was to extend genotype-by-environment (GxE) analyses pe
 5. Perform a t-test to evaluate the significance of differences in environmental covariates between the two groups
 6. Perform false discovery rate correction to generate FDR-corrected p-values
 7. Generate plots to assess and evaluate your analysis
+
+## Data
+All data from Lopez-Cruz et al. (2023) can be found at https://github.com/QuantGen/MAIZE-HUB, but the files used to generate this code are provided in `data` for your convenience. The list of checks was downloaded from the Genomes-to-Fields website: https://www.genomes2fields.org/about/project-overview/#YS-HIP_Hybrid-HIP_Inbred-genotypes.
